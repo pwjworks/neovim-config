@@ -16,5 +16,5 @@ rm -rf ~/.cache/nvim
 ## Install
 
 ```bash
-git clone https://github.com/FBamx/lazynvim.git -b master ~/.config/nvim
+git clone https://github.com/pwjworks/neovim-config.git -b master ~/.config/nvim
 ```
