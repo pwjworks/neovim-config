@@ -93,7 +93,6 @@ return {
       }
     }
   },
-
   -- dap
   {
     "mfussenegger/nvim-dap",
@@ -113,7 +112,29 @@ return {
           args = { 'dap', '-l', '127.0.0.1:${port}' },
         }
       }
-
+      require("dap").adapters.codelldb = {
+        type = 'server',
+        port = "${port}",
+        executable = {
+          -- CHANGE THIS to your path!
+          command = '/home/pwjworks/codelldb/extension/adapter/codelldb',
+          args = { "--port", "${port}" },
+          -- On windows you may have to uncomment this:
+          -- detached = false,
+        }
+      }
+      require("dap").configurations.cpp = {
+        {
+          type = 'codelldb',
+          request = 'launch',
+          -- program = function()
+          --   return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+          -- end,
+          program = '${fileDirname}/build/linux/x86_64/debug/${fileBasenameNoExtension}',
+          cwd = '${workspaceFolder}',
+          terminal = 'integrated'
+        }
+      }
       -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
       require("dap").configurations.go = {
         {

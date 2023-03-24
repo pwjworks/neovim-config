@@ -7,6 +7,8 @@ return {
       flavour = "mocha",
       term_colors = true,
       transparent_background = true,
+      no_italic = false,
+      no_bold = false,
       color_overrides = {
         mocha = {
           base = "#000000",
@@ -14,7 +16,41 @@ return {
           crust = "#000000",
         },
       },
+      styles = {
+        comments = { "italic" },
+        conditionals = { "italic" },
+        loops = {},
+        functions = {},
+        keywords = { "bold" },
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+      }
     },
+  },
+  -- tokyonight
+  {
+    "folke/tokyonight.nvim",
+    name = "tokyonight",
+    opts = {
+      transparent = true,
+      style = "moon",
+      styles = {
+        -- Style to be applied to different syntax groups
+        -- Value is any valid attr-list value for `:help nvim_set_hl`
+        comments = { italic = true },
+        keywords = { italic = true },
+        functions = {},
+        variables = {},
+        -- Background styles. Can be "dark", "transparent" or "normal"
+        sidebars = "dark", -- style for sidebars, see below
+        floats = "dark",   -- style for floating windows
+      },
+    }
   },
   -- oxocarbon
   {

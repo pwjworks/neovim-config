@@ -49,4 +49,4 @@ opt.iskeyword:append("_") -- consider string_string as whole word
 
 vim.g.local_history_path = "/home/pwjworks/.local-history"
 vim.g.local_history_max_changes = 100
-vim.g.local_history_new_change_delay = 120
+vim.g.local_history_new_change_delay = 60
