@@ -348,6 +348,7 @@ return {
         "regex",
         "vim",
         "yaml",
+        "cpp",
       }
     end,
   },
