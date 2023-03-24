@@ -127,10 +127,10 @@ return {
         {
           type = 'codelldb',
           request = 'launch',
-          -- program = function()
-          --   return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-          -- end,
           program = '${fileDirname}/build/linux/x86_64/debug/${fileBasenameNoExtension}',
+          -- program = function()
+          --   return '${fileDirname}/build/linux/x86_64/debug/${fileBasenameNoExtension}'
+          -- end,
           cwd = '${workspaceFolder}',
           terminal = 'integrated'
         }
