@@ -461,13 +461,14 @@ return {
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local cmp = require("cmp")
+      -- highlight groups config
       local hl_groups = {
         PmenuSel = { bg = "#282C34", fg = "NONE" },
         Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
         CmpItemAbbrDeprecated = { fg = "#7E8294", bg = "NONE" },
         CmpItemAbbrMatch = { fg = "#82AAFF", bg = "NONE" },
         CmpItemAbbrMatchFuzzy = { fg = "#82AAFF", bg = "NONE" },
-        CmpItemMenu = { fg = "#C792EA", bg = "NONE" },
+        CmpItemMenu = { fg = "#C792EA", bold = true },
         CmpItemKindField = { fg = "#EED8DA", bg = "#B5585F" },
         CmpItemKindProperty = { fg = "#EED8DA", bg = "#B5585F" },
         CmpItemKindEvent = { fg = "#EED8DA", bg = "#B5585F" },
@@ -497,7 +498,6 @@ return {
       for group, color in pairs(hl_groups) do
         vim.api.nvim_set_hl(0, group, color)
       end
-      vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = "#C792EA", bold = true })
 
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
       opts.window = {
