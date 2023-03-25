@@ -523,13 +523,19 @@ return {
           })(entry, vim_item)
           local strings = vim.split(kind.kind, "%s", { trimempty = true })
 
-
+          kind.menu = ({
+            buffer = "☄️",
+            nvim_lsp = "👾",
+            luasnip = "🌖",
+            nvim_lua = "🌙",
+            latex_symbols = "📚",
+          })[entry.source.name]
           -- add return types for function suggestions.
           local item = entry:get_completion_item()
           if item.detail then
-            kind.menu = "    (" .. (strings[2] or "") .. ") ✨" .. item.detail
+            kind.menu = "    " .. (strings[2] or "") .. kind.menu .. "✨" .. item.detail
           else
-            kind.menu = "    (" .. (strings[2] or "") .. ")"
+            kind.menu = "    " .. (strings[2] or "") .. kind.menu
           end
 
           kind.kind = " " .. (strings[1] or "") .. " "
