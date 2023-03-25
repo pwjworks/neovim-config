@@ -461,7 +461,6 @@ return {
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local cmp = require("cmp")
-      local luasnip = require("luasnip")
       -- highlight groups config
       local hl_groups = {
         PmenuSel = { bg = "#282C34", fg = "NONE" },
@@ -499,7 +498,7 @@ return {
       for group, color in pairs(hl_groups) do
         vim.api.nvim_set_hl(0, group, color)
       end
-      -- tab for confirm, <S-Tab> for select_next_item
+      -- tab for confirm
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping.confirm({ select = true }),
       })
