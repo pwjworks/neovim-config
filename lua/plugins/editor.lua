@@ -537,9 +537,11 @@ return {
         format = function(entry, vim_item)
           local kind = require("lspkind").cmp_format({
             mode = "symbol_text",
-            maxwidth = 60,
+            maxwidth = 40,
+            ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
           })(entry, vim_item)
           local strings = vim.split(kind.kind, "%s", { trimempty = true })
+
 
           -- add return types for function suggestions.
           local item = entry:get_completion_item()
@@ -550,16 +552,6 @@ return {
           end
 
           kind.kind = " " .. (strings[1] or "") .. " "
-          -- limit function length.
-          function trim(text)
-            local max = 40
-            if text and text:len() > max then
-              text = text:sub(1, max) .. "..."
-            end
-            return text
-          end
-
-          kind.abbr = trim(kind.abbr)
           return kind
         end,
       }
