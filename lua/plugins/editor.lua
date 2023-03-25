@@ -423,6 +423,7 @@ return {
         project = {
           base_dirs = {
             "~/Projects",
+            "~/.config/nvim"
           },
         },
         undo = {
@@ -451,4 +452,50 @@ return {
       telescope.load_extension("undo")
     end,
   },
+  -- add cmp-emoji
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = { "hrsh7th/cmp-emoji",
+      "onsails/lspkind.nvim",
+      "nvim-tree/nvim-web-devicons"
+    },
+    ---@param opts cmp.ConfigSchema
+    opts = function(_, opts)
+      local cmp = require("cmp")
+      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
+      opts.window = {
+        completion = {
+          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:TabLineSel,Search:None",
+          side_padding = 0,
+        },
+        documentation = {
+          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+          side_padding = 0,
+        }
+      }
+      opts.formatting = {
+        fields = { "kind", "abbr", "menu" },
+        format = function(entry, vim_item)
+          if vim.tbl_contains({ 'path' }, entry.source.name) then
+            local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
+            if icon then
+              vim_item.kind = icon
+              vim_item.kind_hl_group = hl_group
+              return vim_item
+            end
+          end
+          local kind = require("lspkind").cmp_format({
+            mode = "symbol_text",
+            maxwidth = 60,
+          })(entry, vim_item)
+          local strings = vim.split(kind.kind, "%s", { trimempty = true })
+
+          kind.kind = " " .. (strings[1] or "") .. " "
+          kind.menu = "    (" .. (strings[2] or "") .. ")"
+          return kind
+        end,
+      }
+    end,
+  }
+
 }
