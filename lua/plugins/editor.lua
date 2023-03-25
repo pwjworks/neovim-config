@@ -499,27 +499,9 @@ return {
       for group, color in pairs(hl_groups) do
         vim.api.nvim_set_hl(0, group, color)
       end
-      local has_words_before = function()
-        unpack = unpack or table.unpack
-        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-      end
       -- tab for confirm, <S-Tab> for select_next_item
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping.confirm({ select = true }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-            -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-            -- they way you will only jump inside the snippet region
-          elseif luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
-          elseif has_words_before() then
-            cmp.complete()
-          else
-            fallback()
-          end
-        end, { "i", "s" }),
       })
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
       opts.window = {
@@ -546,7 +528,7 @@ return {
           -- add return types for function suggestions.
           local item = entry:get_completion_item()
           if item.detail then
-            kind.menu = "    (" .. (strings[2] or "") .. ")✨" .. item.detail
+            kind.menu = "    (" .. (strings[2] or "") .. ") ✨" .. item.detail
           else
             kind.menu = "    (" .. (strings[2] or "") .. ")"
           end
