@@ -463,7 +463,7 @@ return {
       local cmp = require("cmp")
       -- highlight groups config
       local hl_groups = {
-        PmenuSel = { bg = "#282C34", fg = "NONE" },
+        PmenuSel = { bg = "#AAAAFF", fg = "white" },
         Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
         CmpItemAbbrDeprecated = { fg = "#7E8294", bg = "NONE" },
         CmpItemAbbrMatch = { fg = "#82AAFF", bg = "NONE" },
@@ -505,7 +505,7 @@ return {
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
       opts.window = {
         completion = {
-          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:TabLineSel,Search:None",
+          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
           side_padding = 0,
         },
         documentation = {

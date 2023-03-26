@@ -8,20 +8,28 @@ return {
       render = "compact",
     },
   },
+  -- bufferLine
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
 
+      },
+    },
+  },
   -- dashboard
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)
       local dashboard = require("alpha.themes.dashboard")
       local logo = [[
-██████╗ ███████╗██╗   ██╗███████╗███████╗██████╗  ██████╗ 
+██████╗ ███████╗██╗   ██╗███████╗███████╗██████╗  ██████╗
 ██╔══██╗██╔════╝██║   ██║╚══███╔╝██╔════╝██╔══██╗██╔═══██╗
 ██║  ██║█████╗  ██║   ██║  ███╔╝ █████╗  ██████╔╝██║   ██║
 ██║  ██║██╔══╝  ╚██╗ ██╔╝ ███╔╝  ██╔══╝  ██╔══██╗██║   ██║
 ██████╔╝███████╗ ╚████╔╝ ███████╗███████╗██║  ██║╚██████╔╝
-╚═════╝ ╚══════╝  ╚═══╝  ╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ 
-                  github.com/FBamx
+╚═════╝ ╚══════╝  ╚═══╝  ╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝
+                  github.com/pwjworks
       ]]
       opts.section.header.val = vim.split(logo, "\n", {})
       opts.section.buttons.val = {
