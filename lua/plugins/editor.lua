@@ -57,7 +57,7 @@ return {
   {
     "akinsho/toggleterm.nvim",
     opts = function()
-      return require("plugins.config.telescope")
+      return require("plugins.config.toggleterm")
     end
   },
 

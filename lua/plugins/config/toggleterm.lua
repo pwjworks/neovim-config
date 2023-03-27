@@ -4,3 +4,4 @@ local options = {
   insert_mappings = true,
   direction = "float"
 }
+return options
