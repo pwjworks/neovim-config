@@ -127,7 +127,7 @@ return {
         {
           type = 'codelldb',
           request = 'launch',
-          program = '${fileDirname}/build/linux/x86_64/debug/${fileBasenameNoExtension}',
+          program = '${fileDirname}/../build/linux/x86_64/debug/${fileBasenameNoExtension}',
           -- program = function()
           --   return '${fileDirname}/build/linux/x86_64/debug/${fileBasenameNoExtension}'
           -- end,
@@ -171,11 +171,65 @@ return {
       end
 
       require("dap").defaults.fallback.terminal_win_cmd = "enew | set filetype=dap-terminal"
-      vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" })
-      vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "", linehl = "", numhl = "" })
-      vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "", linehl = "", numhl = "" })
-      vim.fn.sign_define("DapLogPoint", { text = "", texthl = "", linehl = "", numhl = "" })
-      vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl = "" })
+      local dap_breakpoint_color = {
+        breakpoint = {
+          ctermbg = 0,
+          fg = 'white',
+          bg = '#FC5185',
+        },
+        logpoing = {
+          ctermbg = 0,
+          fg = "white",
+          bg = '#3FC1C9',
+        },
+        stopped = {
+          ctermbg = 0,
+          fg = "#252A34",
+          bg = '#F5F5F5',
+        },
+      }
+      vim.api.nvim_set_hl(0, 'DapBreakpoint', dap_breakpoint_color.breakpoint)
+      vim.api.nvim_set_hl(0, 'DapLogPoint', dap_breakpoint_color.logpoing)
+      vim.api.nvim_set_hl(0, 'DapStopped', dap_breakpoint_color.stopped)
+      local dap_breakpoint = {
+        error = {
+          -- text = "",
+          text = "🔴",
+          texthl = "DapBreakpoint",
+          linehl = "DapBreakpoint",
+          numhl = "DapBreakpoint",
+        },
+        condition = {
+          text = '🟠',
+          texthl = 'DapBreakpoint',
+          linehl = 'DapBreakpoint',
+          numhl = 'DapBreakpoint',
+        },
+        rejected = {
+          text = "⚪️",
+          texthl = "DapBreakpint",
+          linehl = "DapBreakpoint",
+          numhl = "DapBreakpoint",
+        },
+        logpoint = {
+          text = '🔔',
+          texthl = 'DapLogPoint',
+          linehl = 'DapLogPoint',
+          numhl = 'DapLogPoint',
+        },
+        stopped = {
+          text = "✔️",
+          texthl = 'DapStopped',
+          linehl = 'DapStopped',
+          numhl = 'DapStopped',
+        },
+      }
+
+      vim.fn.sign_define('DapBreakpoint', dap_breakpoint.error)
+      vim.fn.sign_define('DapBreakpointCondition', dap_breakpoint.condition)
+      vim.fn.sign_define('DapBreakpointRejected', dap_breakpoint.rejected)
+      vim.fn.sign_define('DapLogPoint', dap_breakpoint.logpoint)
+      vim.fn.sign_define('DapStopped', dap_breakpoint.stopped)
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "dap-repl",
         callback = function()
@@ -533,9 +587,9 @@ return {
           -- add return types for function suggestions.
           local item = entry:get_completion_item()
           if item.detail then
-            kind.menu = "    " .. (strings[2] or "") .. kind.menu .. "✨" .. item.detail
+            kind.menu = "    " .. (strings[2] or "") .. (kind.menu or "") .. "✨" .. item.detail
           else
-            kind.menu = "    " .. (strings[2] or "") .. kind.menu
+            kind.menu = "    " .. (strings[2] or "") .. (kind.menu or "")
           end
 
           kind.kind = " " .. (strings[1] or "") .. " "
