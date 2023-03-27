@@ -2,7 +2,6 @@ local options = {
   defaults = {
     prompt_prefix = "   ",
     selection_caret = " ",
-    layout_strategy = "vertical",
     layout_config = {
       vertical = {
         preview_cutoff = 0.2,
@@ -13,32 +12,8 @@ local options = {
     },
     mappings = {
       i = {
-        ["<C-j>"] = function(...)
-          return require("telescope.actions").move_selection_next(...)
-        end,
-        ["<C-k>"] = function(...)
-          return require("telescope.actions").move_selection_previous(...)
-        end,
-        ["<C-p>"] = function(...)
-          return require("telescope.actions.layout").toggle_preview(...)
-        end,
       },
       n = {
-        ["j"] = function(...)
-          return require("telescope.actions").move_selection_next(...)
-        end,
-        ["k"] = function(...)
-          return require("telescope.actions").move_selection_previous(...)
-        end,
-        ["gg"] = function(...)
-          return require("telescope.actions").move_to_top(...)
-        end,
-        ["G"] = function(...)
-          return require("telescope.actions").move_to_bottom(...)
-        end,
-        ["<C-p>"] = function(...)
-          return require("telescope.actions.layout").toggle_preview(...)
-        end,
       },
     },
   },
