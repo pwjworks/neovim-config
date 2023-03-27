@@ -2,15 +2,9 @@ return {
   -- customize file explorer
   {
     "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      close_if_last_window = true,              -- Close Neo-tree if it is the last window left in the tab
-      filesystem = {
-        follow_current_file = true,             -- This will find and focus the file in the active buffer every
-        -- time the current file is changed while the tree is open.
-        group_empty_dirs = false,               -- when true, empty folders will be grouped together
-        hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
-      },
-    },
+    opts = function()
+      return require "plugins.config.neo-tree"
+    end
   },
 
   -- { "folke/noice.nvim", enabled = false },
@@ -382,6 +376,9 @@ return {
   -- treesitter
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "HiPhish/nvim-ts-rainbow2"
+    },
     opts = function(_, opts)
       opts.ensure_installed = {
         "bash",
@@ -405,6 +402,17 @@ return {
         "cpp",
       }
     end,
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        rainbow = {
+          enable = true,
+          -- Which query to use for finding delimiters
+          query = 'rainbow-parens',
+          -- Highlight the entire buffer all at once
+          strategy = require('ts-rainbow').strategy.global,
+        }
+      }
+    end
   },
 
   -- tagbar
