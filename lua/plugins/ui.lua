@@ -15,6 +15,14 @@ return {
       },
     },
   },
+  -- lualine
+  {
+    'nvim-lualine/lualine.nvim',
+    event = "VeryLazy",
+    opts = function()
+      return require("plugins.config.lualine")
+    end
+  },
   -- dashboard
   {
     "goolord/alpha-nvim",

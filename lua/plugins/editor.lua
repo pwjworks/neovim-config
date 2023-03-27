@@ -2,6 +2,10 @@ return {
   -- customize file explorer
   {
     "nvim-neo-tree/neo-tree.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
     opts = function()
       return require "plugins.config.neo-tree"
     end

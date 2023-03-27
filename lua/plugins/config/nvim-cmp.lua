@@ -36,6 +36,14 @@ for group, color in pairs(hl_groups) do
   vim.api.nvim_set_hl(0, group, color)
 end
 
+local trim = function(text)
+  local max = 20
+  if text and text:len() > max then
+    text = text:sub(1, max) .. "..."
+  end
+  return text
+end
+
 local options = {
   window = {
     completion = {
@@ -67,7 +75,7 @@ local options = {
       -- add return types for function suggestions.
       local item = entry:get_completion_item()
       if item.detail then
-        kind.menu = "    " .. (strings[2] or "") .. (kind.menu or "") .. "✨" .. item.detail
+        kind.menu = "    " .. (strings[2] or "") .. (kind.menu or "") .. "✨" .. trim(item.detail)
       else
         kind.menu = "    " .. (strings[2] or "") .. (kind.menu or "")
       end
