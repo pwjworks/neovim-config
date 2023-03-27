@@ -3,43 +3,9 @@ return {
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
-    opts = {
-      diagnostics = {
-        update_in_insert = true,
-      },
-      format = {
-        timeout_ms = 5000,
-      },
-      ---@type lspconfig.options
-      servers = {
-        clangd = {
-          cmd = { "clangd",
-            "--all-scopes-completion",
-            "--background-index",
-            "--clang-tidy",
-            "--fallback-style=google",
-            "--compile_args_from=filesystem", -- lsp-> does not come from compie_commands.json
-            "--completion-parse=always",
-            "--completion-style=bundled",
-            "--cross-file-rename",
-            "--debug-origin",
-            "--enable-config", -- clangd 11+ supports reading from .clangd configuration file
-            "--folding-ranges",
-            "--function-arg-placeholders",
-            "--header-insertion=iwyu",
-            "--pch-storage=memory", -- could also be disk
-            "--suggest-missing-includes",
-            "-j=4",                 -- number of workers
-            -- "--resource-dir="
-            "--log=error",
-            --[[ "--query-driver=/usr/bin/g++", ]]
-          },
-          init_options = {
-            compilationDatabasePath = "./build",
-          },
-        }
-      },
-    },
+    opts = function()
+      require("plugins.config.nvim-lspconfig")
+    end
   },
 
   -- uncomment and add tools to ensure_installed below
