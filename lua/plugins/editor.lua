@@ -161,7 +161,6 @@ return {
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
       opts.window = options.window
       opts.formatting = options.formatting
-      return opts
     end,
   },
   {
@@ -169,5 +168,21 @@ return {
     keys = function()
       return {}
     end,
+  },
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require("plugins.config.neoscroll")
+    end
+  },
+  {
+    "petertriho/nvim-scrollbar",
+    config = function()
+      require("scrollbar").setup({
+        handle = {
+          color = "#BDC0C2"
+        },
+      })
+    end
   }
 }

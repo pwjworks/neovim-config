@@ -9,11 +9,6 @@ return {
   -- bufferLine
   {
     "akinsho/bufferline.nvim",
-    opts = {
-      options = {
-
-      },
-    },
   },
   -- lualine
   {
@@ -27,6 +22,9 @@ return {
   -- lsp-status
   {
     "nvim-lua/lsp-status.nvim",
+    config = function()
+      return require("plugins.config.lsp-status")
+    end
   },
   -- dashboard
   {
