@@ -19,9 +19,14 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     event = "VeryLazy",
-    opts = function()
-      return require("plugins.config.lualine")
+    opts = function(_, opts)
+      opts = vim.tbl_extend("force", opts, require("plugins.config.lualine"))
+      return opts
     end
+  },
+  -- lsp-status
+  {
+    "nvim-lua/lsp-status.nvim",
   },
   -- dashboard
   {

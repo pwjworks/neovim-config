@@ -31,7 +31,7 @@ return {
   {
     "rcarriga/nvim-dap-ui",
     opts = function()
-      require("plugins.config.dap-ui")
+      return require("plugins.config.dap-ui")
     end
   },
   -- dap
@@ -161,6 +161,7 @@ return {
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
       opts.window = options.window
       opts.formatting = options.formatting
+      return opts
     end,
   },
   {

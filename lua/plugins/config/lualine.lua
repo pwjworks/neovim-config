@@ -20,10 +20,6 @@ local options = {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
 }
 
 return options
