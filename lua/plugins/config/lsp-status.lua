@@ -4,6 +4,7 @@ lsp_status.config({
   component_separator = '|',
   status_symbol = '',
   current_function = true,
+  diagnostics = false,
   spinner_frames = { '🌑 ', '🌒 ', '🌓 ', '🌔 ', '🌕 ', '🌖 ', '🌗 ', '🌘 ' }
 })
 lsp_status.register_progress()

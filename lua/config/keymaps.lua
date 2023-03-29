@@ -37,3 +37,5 @@ map("n", "<A-t>", ":Tagbar<CR>")
 -- diagnostic
 map("n", "<A-n>", vim.diagnostic.goto_next)
 map("n", "<A-p>", vim.diagnostic.goto_prev)
+
+map("n", "<F2>", ":OverseerRun<CR>")
