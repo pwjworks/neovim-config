@@ -38,4 +38,18 @@ map("n", "<A-t>", ":Tagbar<CR>")
 map("n", "<A-n>", vim.diagnostic.goto_next)
 map("n", "<A-p>", vim.diagnostic.goto_prev)
 
+-- overseer
 map("n", "<F2>", ":OverseerRun<CR>")
+
+-- cppassist
+local opts = { noremap = true, silent = true }
+-- switch between source and header
+map('n', '<A-o>', '<Cmd>SwitchSourceAndHeader<CR>', opts)
+-- generate the function definition or static variable definition in source
+map('n', '<leader>hb', '<Cmd>ImplementInSource<CR>', opts)
+-- generate the ation definition or static variable definition in source in visual mode
+map('v', '<leader>hb', '<Cmd>lua require("cppassist").ImplementInSourceInVisualMode<CR>', opts)
+-- generate the function definition or static variable definition in header
+map('n', '<leader>hv', '<Cmd>ImplementOutOfClass<CR>', opts)
+-- goto the header file
+map('n', '<leader>hh', '<Cmd>GotoHeaderFile<CR>', opts)

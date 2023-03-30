@@ -5,7 +5,7 @@ return {
     ---@class PluginLspOpts
     opts = function()
       require("plugins.config.nvim-lspconfig")
-    end
+    end,
   },
 
   -- uncomment and add tools to ensure_installed below
@@ -35,8 +35,7 @@ return {
       local nls = require("null-ls")
       return {
         root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
-        sources = {
-        },
+        sources = {},
       }
     end,
   },
@@ -74,8 +73,14 @@ return {
           -- mirrors the toggleterm "hidden" parameter, and keeps the task from
           -- being rendered in the toggleable window
           hidden = false,
-        }
+        },
       })
+    end,
+  },
+  {
+    "Kohirus/cppassist.nvim",
+    config = function()
+      require("cppassist").setup()
     end
   },
   -- language specific extension modules
