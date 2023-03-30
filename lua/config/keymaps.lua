@@ -8,9 +8,6 @@ map("n", "<Esc>", ":nohl<CR>")
 -- local history
 map("n", "<A-h>", ":LocalHistoryToggle<CR>")
 
--- escape the insert mode
-map("i", "jj", "<Esc>")
-
 -- navigate within insert mode
 map("i", "<C-h>", "<Left>")
 map("i", "<C-l>", "<Right>")
