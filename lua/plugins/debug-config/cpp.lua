@@ -16,6 +16,7 @@ dap.configurations.cpp = {
   {
     type = 'codelldb',
     request = 'launch',
+    preLaunchTask = "xmake",
     program = '${fileDirname}/../build/linux/x86_64/debug/${fileBasenameNoExtension}',
     -- program = function()
     --   return '${fileDirname}/build/linux/x86_64/debug/${fileBasenameNoExtension}'

@@ -5,17 +5,10 @@ return {
     name = "catppuccin",
     opts = {
       flavour = "mocha",
-      term_colors = true,
+      term_colors = false,
       transparent_background = true,
       no_italic = false,
       no_bold = false,
-      color_overrides = {
-        mocha = {
-          base = "#000000",
-          mantle = "#000000",
-          crust = "#000000",
-        },
-      },
       styles = {
         comments = { "italic" },
         conditionals = { "italic" },
@@ -23,7 +16,7 @@ return {
         functions = { "bold" },
         keywords = { "italic" },
         strings = {},
-        variables = {},
+        variables = { "italic" },
         numbers = {},
         booleans = {},
         properties = {},
@@ -38,6 +31,11 @@ return {
         notify = false,
         mini = false,
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+      },
+      dim_inactive = {
+        enabled = false,
+        shade = "dark",
+        percentage = 0.15,
       },
     },
   },
