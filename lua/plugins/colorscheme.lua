@@ -12,11 +12,11 @@ return {
       styles = {
         comments = { "italic" },
         conditionals = { "italic" },
-        loops = {},
+        loops = { "italic" },
         functions = { "bold" },
         keywords = { "italic" },
         strings = {},
-        variables = { "italic" },
+        variables = { "bold", "italic" },
         numbers = {},
         booleans = {},
         properties = {},

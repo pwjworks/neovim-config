@@ -150,6 +150,12 @@ return {
   },
   -- add cmp-emoji
   {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup()
+    end
+  },
+  {
     "hrsh7th/nvim-cmp",
     dependencies = { "hrsh7th/cmp-emoji",
       "onsails/lspkind.nvim",
@@ -158,6 +164,8 @@ return {
     opts = function(_, opts)
       local options = require("plugins.config.nvim-cmp")
       local cmp = require("cmp")
+      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+      cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
       -- tab for confirm
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping.confirm({ select = true }),
