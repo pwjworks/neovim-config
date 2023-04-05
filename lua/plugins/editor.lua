@@ -106,11 +106,13 @@ return {
         },
         playground = {
           enable = true,
+        },
+        context_commentstring = {
+          enable = true,
         }
       }
     end
   },
-
   -- tagbar
   -- neet to install ctags: apt install universal-ctags
   {
