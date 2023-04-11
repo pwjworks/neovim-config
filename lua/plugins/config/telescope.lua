@@ -10,12 +10,6 @@ local options = {
       height = 0.9,
       width = 0.9,
     },
-    mappings = {
-      i = {
-      },
-      n = {
-      },
-    },
   },
   extensions = {
     project = {

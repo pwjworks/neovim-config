@@ -133,9 +133,13 @@ return {
     opts = function()
       return require("plugins.config.telescope")
     end,
-    keys = function()
-      return require("plugins.keys.telescope")
-    end,
+    keys = {
+      {
+        "<leader>fp",
+        "<CMD>Telescope project display_type=full<CR>",
+        desc = "Find project",
+      },
+    },
     config = function(_, opts)
       local telescope = require("telescope")
       telescope.setup(opts)
