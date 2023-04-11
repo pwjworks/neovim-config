@@ -260,11 +260,11 @@ return {
       vim.keymap.set("n", ",W", swap_windows, { desc = "Swap windows" })
     end,
   },
-  {
-    "nvim-zh/colorful-winsep.nvim",
-    config = true,
-    event = { "WinNew" },
-  },
+  -- {
+  --   "nvim-zh/colorful-winsep.nvim",
+  --   config = true,
+  --   event = { "WinNew" },
+  -- },
   {
     "phaazon/hop.nvim",
     lazy = true,
