@@ -278,4 +278,8 @@ return {
       -- vim.api.nvim_set_keymap("n", "P", "<cmd>HopPattern<cr>", { silent = true })
     end,
   },
+  {
+    "chrisgrieser/nvim-various-textobjs",
+    opts = { useDefaultKeymaps = true },
+  }
 }
