@@ -89,7 +89,7 @@ return {
     keys = {
       {
         "<leader>dh",
-        "<Cmd>DiffviewFileHistory<CR>",
+        "<Cmd>DiffviewFileHistory %<CR>",
         desc = "DiffviewFileHistory",
       },
     }
