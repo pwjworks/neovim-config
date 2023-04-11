@@ -113,11 +113,6 @@ return {
       }
     end
   },
-  -- tagbar
-  -- neet to install ctags: apt install universal-ctags
-  {
-    "preservim/tagbar",
-  },
 
   -- history
   -- you need to install python3 and pip3 install pynvim
@@ -136,10 +131,10 @@ return {
       { "debugloop/telescope-undo.nvim" },
     },
     opts = function()
-      require("plugins.config.telescope")
+      return require("plugins.config.telescope")
     end,
     keys = function()
-      require("plugins.keys.telescope")
+      return require("plugins.keys.telescope")
     end,
     config = function(_, opts)
       local telescope = require("telescope")
@@ -148,6 +143,7 @@ return {
       telescope.load_extension("fzf")
       telescope.load_extension("project")
       telescope.load_extension("undo")
+      telescope.load_extension("harpoon")
     end,
   },
   -- add cmp-emoji
@@ -281,5 +277,13 @@ return {
   {
     "chrisgrieser/nvim-various-textobjs",
     opts = { useDefaultKeymaps = true },
+  },
+  -- harpoon
+  {
+    "ThePrimeagen/harpoon"
+  },
+  {
+    "echasnovski/mini.surround",
+    enabled = false
   }
 }

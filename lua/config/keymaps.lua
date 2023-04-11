@@ -28,9 +28,6 @@ map("n", "<leader>ph", ":lua require 'gitsigns'.preview_hunk()<CR>")
 map("n", "<leader>gb", ":lua package.loaded.gitsigns.blame_line()<CR>")
 map("n", "<leader>td", ":lua require 'gitsigns'.toggle_deleted()<CR>")
 
--- tagbar
-map("n", "<A-t>", ":Tagbar<CR>")
-
 -- diagnostic
 map("n", "<A-n>", vim.diagnostic.goto_next)
 map("n", "<A-p>", vim.diagnostic.goto_prev)
@@ -50,3 +47,7 @@ map('v', '<leader>hb', '<Cmd>lua require("cppassist").ImplementInSourceInVisualM
 map('n', '<leader>hv', '<Cmd>ImplementOutOfClass<CR>', opts)
 -- goto the header file
 map('n', '<leader>hh', '<Cmd>GotoHeaderFile<CR>', opts)
+
+
+-- Telescope
+-- map('n', '<leader>fp', '<Cmd>Telescope project display_type=full<CR>', opts)
