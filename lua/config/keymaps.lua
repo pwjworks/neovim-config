@@ -47,7 +47,3 @@ map('v', '<leader>hb', '<Cmd>lua require("cppassist").ImplementInSourceInVisualM
 map('n', '<leader>hv', '<Cmd>ImplementOutOfClass<CR>', opts)
 -- goto the header file
 map('n', '<leader>hh', '<Cmd>GotoHeaderFile<CR>', opts)
-
-
--- Telescope
--- map('n', '<leader>fp', '<Cmd>Telescope project display_type=full<CR>', opts)

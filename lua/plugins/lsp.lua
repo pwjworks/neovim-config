@@ -86,9 +86,26 @@ return {
   {
     "sindrets/diffview.nvim",
     event = "VeryLazy",
+    keys = {
+      {
+        "<leader>dh",
+        "<Cmd>DiffviewFileHistory<CR>",
+        desc = "DiffviewFileHistory",
+      },
+    }
+  },
+  {
+    "simrat39/symbols-outline.nvim",
     config = function()
-      require("cppassist").setup()
-    end
+      require("symbols-outline").setup()
+    end,
+    keys = {
+      {
+        "<leader>oo",
+        "<Cmd>SymbolsOutline<CR>",
+        desc = "symbols outline",
+      },
+    }
   },
   -- language specific extension modules
   { import = "lazyvim.plugins.extras.lang.typescript" },
