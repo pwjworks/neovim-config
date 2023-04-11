@@ -107,6 +107,15 @@ return {
       },
     }
   },
+  -- {
+  --   "kevinhwang91/nvim-ufo",
+  --   dependencies = {
+  --     "kevinhwang91/promise-async"
+  --   },
+  --   opts = function()
+  --     return require("plugins.config.nvim-ufo")
+  --   end
+  -- },
   -- language specific extension modules
   { import = "lazyvim.plugins.extras.lang.typescript" },
   { import = "lazyvim.plugins.extras.lang.json" },
