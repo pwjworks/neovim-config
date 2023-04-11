@@ -139,6 +139,11 @@ return {
         "<CMD>Telescope project display_type=full<CR>",
         desc = "Find project",
       },
+      {
+        "<leader>fm",
+        "<CMD>Telescope harpoon marks<CR>",
+        desc = "Find marks",
+      },
     },
     config = function(_, opts)
       local telescope = require("telescope")
@@ -284,7 +289,14 @@ return {
   },
   -- harpoon
   {
-    "ThePrimeagen/harpoon"
+    "ThePrimeagen/harpoon",
+    keys = {
+      {
+        "<leader>am",
+        ":lua require('harpoon.mark').add_file()<CR>",
+        desc = "Add marks",
+      },
+    }
   },
   {
     "echasnovski/mini.surround",
