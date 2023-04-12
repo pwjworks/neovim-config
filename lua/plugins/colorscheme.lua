@@ -14,13 +14,11 @@ return {
         conditionals = { "italic" },
         loops = { "italic" },
         functions = { "bold" },
-        keywords = { "italic" },
         strings = {},
         variables = { "bold", "italic" },
         numbers = {},
         booleans = {},
-        properties = {},
-        types = { "italic" },
+        types = { "italic", "bold" },
         operators = {},
       },
       integrations = {
@@ -37,6 +35,13 @@ return {
         shade = "dark",
         percentage = 0.15,
       },
+      custom_highlights = function(colors)
+        return {
+          ["@keyword"] = { fg = "#fca7ea", style = { "italic" } },
+          ["@property"] = { fg = "#fca7ea", style = { "italic" } },
+          ["@type.builtin"] = { style = { "italic" } },
+        }
+      end
     },
   },
   -- tokyonight
@@ -54,8 +59,8 @@ return {
         functions = {},
         variables = {},
         -- Background styles. Can be "dark", "transparent" or "normal"
-        sidebars = "dark", -- style for sidebars, see below
-        floats = "dark",   -- style for floating windows
+        sidebars = "transparent", -- style for sidebars, see below
+        floats = "transparent",   -- style for floating windows
       },
     }
   },

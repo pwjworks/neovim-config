@@ -72,8 +72,8 @@ return {
       "HiPhish/nvim-ts-rainbow2",
       "nvim-treesitter/playground"
     },
-    opts = function(_, opts)
-      opts.ensure_installed = {
+    opts = {
+      ensure_installed = {
         "bash",
         "comment",
         "diff",
@@ -94,7 +94,7 @@ return {
         "yaml",
         "cpp",
       }
-    end,
+    },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
       require("nvim-treesitter.configs").setup {
@@ -104,6 +104,15 @@ return {
           query = 'rainbow-parens',
           -- Highlight the entire buffer all at once
           strategy = require('ts-rainbow').strategy.global,
+          hlgroups = {
+            'TSRainbowOrange',
+            'TSRainbowRed',
+            'TSRainbowViolet',
+            'TSRainbowYellow',
+            'TSRainbowBlue',
+            'TSRainbowGreen',
+            'TSRainbowCyan'
+          },
         }
       }
     end
