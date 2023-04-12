@@ -60,8 +60,8 @@ return {
   -- toggle term
   {
     "akinsho/toggleterm.nvim",
-    opts = function()
-      return require("plugins.config.toggleterm")
+    config = function()
+      require("toggleterm").setup(require("plugins.config.toggleterm"))
     end
   },
 
@@ -72,45 +72,8 @@ return {
       "HiPhish/nvim-ts-rainbow2",
       "nvim-treesitter/playground"
     },
-    opts = function(_, opts)
-      opts.ensure_installed = {
-        "bash",
-        "comment",
-        "diff",
-        "dockerfile",
-        "dot",
-        "git_rebase",
-        "gitattributes",
-        "gitcommit",
-        "gitignore",
-        "lua",
-        "make",
-        "markdown",
-        "markdown_inline",
-        "mermaid",
-        "python",
-        "regex",
-        "vim",
-        "yaml",
-        "cpp",
-      }
-    end,
     config = function()
-      require("nvim-treesitter.configs").setup {
-        rainbow = {
-          enable = true,
-          -- Which query to use for finding delimiters
-          query = 'rainbow-parens',
-          -- Highlight the entire buffer all at once
-          strategy = require('ts-rainbow').strategy.global,
-        },
-        playground = {
-          enable = true,
-        },
-        context_commentstring = {
-          enable = true,
-        }
-      }
+      require("nvim-treesitter.configs").setup(require("plugins.config.treesitter"))
     end
   },
 
