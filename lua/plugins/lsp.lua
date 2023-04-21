@@ -2,9 +2,12 @@ return {
   -- uncomment and add lsp servers with their config to servers below
   {
     "neovim/nvim-lspconfig",
+    dependencies={
+      "nvim-lua/lsp-status.nvim",
+    },
     ---@class PluginLspOpts
     opts = function()
-      require("plugins.config.nvim-lspconfig")
+      return require("plugins.config.nvim-lspconfig")
     end,
   },
 
