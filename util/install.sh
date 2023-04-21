@@ -26,15 +26,11 @@ chmod +x ./nvim.appimage
 sudo mv ./nvim.appimage /usr/bin/nvim
 
 # zsh
-cp ~/.config/nvim/util/.zshrc ~/.zshrc
 sudo apt install -y zsh
-chsh -s $(which zsh)
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-zsh
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/plugins/zsh-syntax-highlighting
+cp ~/.config/nvim/util/.zshrc ~/.zshrc
+cp ~/.config/nvim/util/.p10k.zsh ~/.p10k.zsh
 
 # docker
 sudo install -m 0755 -d /etc/apt/keyrings
