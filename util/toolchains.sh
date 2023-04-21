@@ -11,7 +11,7 @@ libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
 sudo apt install python3
 
 # autojump
-git clone git://github.com/wting/autojump.git
+git clone https://github.com/wting/autojump.git
 cd autojump
 python3 ./install.sh
 
