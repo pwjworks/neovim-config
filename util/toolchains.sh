@@ -8,7 +8,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/plugins/
 sudo apt update && sudo apt upgrade
 sudo apt install build-essential libncursesw5-dev libssl-dev \
 libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
-suto apt install python3
+sudo apt install python3
 
 # autojump
 git clone git://github.com/wting/autojump.git
