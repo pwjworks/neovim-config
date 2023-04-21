@@ -37,12 +37,3 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-[[ -s /home/pwjworks/.autojump/etc/profile.d/autojump.sh ]] && source /home/pwjworks/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
-
-
-
-# >>> xmake >>>
-[[ -s "$HOME/.xmake/profile" ]] && source "$HOME/.xmake/profile" # load xmake profile
-# <<< xmake <<<
-
