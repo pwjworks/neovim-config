@@ -15,10 +15,10 @@ python3 ~/autojump/install.sh
 # cmake & xmake
 wget https://github.com/Kitware/CMake/releases/download/v3.26.3/cmake-3.26.3-linux-x86_64.sh
 sudo zsh ~/cmake-3.26.3-linux-x86_64.sh
-wget https://xmake.io/shget.text -O - | zsh
+wget https://xmake.io/shget.text -O - | bash
 
 # nodejs
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | zsh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 source ~/.zshrc
 nvm install node
 
