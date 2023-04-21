@@ -25,13 +25,14 @@ wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage
 sudo mv ./nvim.appimage /usr/bin/nvim
 
 # zsh
+cp ~/.config/nvim/util/.zshrc ~/.zshrc
 sudo apt install -y zsh
 chsh -s ${which zsh}
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/plugins/zsh-syntax-highlighting
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-cp ~/.config/nvim/util/.zshrc ~/.zshrc
 
 # docker
 sudo install -m 0755 -d /etc/apt/keyrings
