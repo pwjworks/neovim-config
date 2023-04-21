@@ -22,12 +22,14 @@ sudo apt-get install \
     
 # neovim
 wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage
+chmod +x ./nvim.appimage
 sudo mv ./nvim.appimage /usr/bin/nvim
 
 # zsh
 cp ~/.config/nvim/util/.zshrc ~/.zshrc
 sudo apt install -y zsh
-chsh -s ${which zsh}
+chsh -s $(which zsh)
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -48,4 +50,4 @@ sudo apt-get update
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-zsh ./toolchains.sh
+zsh ~/.config/nvim/util/toolchains.sh
