@@ -18,7 +18,7 @@ sudo zsh ./cmake-3.26.3-linux-x86_64.sh
 wget https://xmake.io/shget.text -O - | zsh
 
 # nodejs
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | zsh
 source ~/.zshrc
 nvm install node
 
