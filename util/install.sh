@@ -8,7 +8,7 @@ if [ -d "/etc/apt/sources.list" ];then
   sudo rm "/etc/apt/sources.list"
 fi
 
-sudo cp ./sources.list /etc/apt/sources.list
+sudo cp ~/.config/nvim/util/sources.list /etc/apt/sources.list
 
 sudo apt-get update
 sudo apt-get install \
@@ -31,7 +31,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/plugins/zsh-syntax-highlighting
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-cp ./.zshrc ~/.zshrc
+cp ~/.config/nvim/util/.zshrc ~/.zshrc
 
 # docker
 sudo install -m 0755 -d /etc/apt/keyrings
