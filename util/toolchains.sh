@@ -14,7 +14,7 @@ python3 ~/autojump/install.sh
 
 # cmake & xmake
 wget https://github.com/Kitware/CMake/releases/download/v3.26.3/cmake-3.26.3-linux-x86_64.sh
-sudo zsh ./cmake-3.26.3-linux-x86_64.sh
+sudo zsh ~/cmake-3.26.3-linux-x86_64.sh
 wget https://xmake.io/shget.text -O - | zsh
 
 # nodejs
