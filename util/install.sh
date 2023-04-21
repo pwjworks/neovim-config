@@ -1,5 +1,6 @@
 cd ~
-if [ ! -d "/etc/apt/sources.list.bak"] && [ -d "/etc/apt/sources.list" ];then
+
+if [ ! -d "/etc/apt/sources.list.bak" ] && [ -d "/etc/apt/sources.list" ];then
   sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak
 fi
 
