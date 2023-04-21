@@ -1,16 +1,15 @@
 cd ~
+source ~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 
 # python
 sudo apt update && sudo apt upgrade
-sudo apt install build-essential libncursesw5-dev libssl-dev \
-libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
 sudo apt install python3
 
 # autojump
 git clone https://github.com/wting/autojump.git
-python3 ~/autojump/install.sh
+~/autojump/install.py
 
 # cmake & xmake
 wget https://github.com/Kitware/CMake/releases/download/v3.26.3/cmake-3.26.3-linux-x86_64.sh
@@ -19,7 +18,6 @@ wget https://xmake.io/shget.text -O - | bash
 
 # nodejs
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-source ~/.zshrc
 nvm install node
 
 # lazygit
