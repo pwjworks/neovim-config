@@ -353,5 +353,8 @@ return {
     config=function ()
       require("colorizer").setup()
     end
+  },
+  {
+    'christoomey/vim-tmux-navigator'
   }
 }

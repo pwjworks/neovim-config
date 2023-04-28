@@ -47,3 +47,9 @@ map('v', '<leader>hb', '<Cmd>lua require("cppassist").ImplementInSourceInVisualM
 map('n', '<leader>hv', '<Cmd>ImplementOutOfClass<CR>', opts)
 -- goto the header file
 map('n', '<leader>hh', '<Cmd>GotoHeaderFile<CR>', opts)
+
+-- tmux navigation
+map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
+map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
+map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
+map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
