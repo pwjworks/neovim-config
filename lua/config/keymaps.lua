@@ -20,8 +20,6 @@ map("n", "<C-a>", "ggVG", { silent = true })
 
 map("i", "<M-z>", "<ESC>", { silent = true })
 
-map("n", "<leader>nh", ":nohl<CR>", { silent = true })
-
 -- git
 map("n", "<leader>rh", ":lua require 'gitsigns'.reset_hunk()<CR>")
 map("n", "<leader>ph", ":lua require 'gitsigns'.preview_hunk()<CR>")

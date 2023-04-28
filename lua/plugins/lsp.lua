@@ -2,7 +2,7 @@ return {
   -- uncomment and add lsp servers with their config to servers below
   {
     "neovim/nvim-lspconfig",
-    dependencies={
+    dependencies = {
       "nvim-lua/lsp-status.nvim",
     },
     ---@class PluginLspOpts
