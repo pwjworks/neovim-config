@@ -32,24 +32,22 @@ return {
   -- formatters
   {
     "jose-elias-alvarez/null-ls.nvim",
+    enabled = false,
     event = { "BufReadPre", "BufNewFile" },
     dependencies = { "mason.nvim" },
     opts = function()
       return {
         root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
-        sources = {},
       }
     end,
   },
   {
     "jay-babu/mason-null-ls.nvim",
+    enabled = false,
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "williamboman/mason.nvim",
       "jose-elias-alvarez/null-ls.nvim",
-    },
-    config = {
-      automatic_installation = true,
     },
   },
   -- overseer for launching tasks

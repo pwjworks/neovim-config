@@ -1,7 +1,6 @@
 local options = {
   filters = {
     dotfiles = false,
-    exclude = { vim.fn.stdpath "config" .. "/lua/custom" },
   },
   filesystem = {
     filtered_items = {
@@ -33,7 +32,7 @@ local options = {
     adaptive_size = false,
     side = "left",
     width = 30,
-    hide_root_folder = true,
+    preserve_window_proportions = true,
   },
   git = {
     enable = false,
