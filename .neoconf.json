@@ -4,12 +4,5 @@
       "enabled": true,
       "plugins": true
     }
-  },
-  "neoconf": {
-    "plugins": {
-      "sumneko_lua": {
-        "enabled": true
-      }
-    }
-  }
+ }
 }

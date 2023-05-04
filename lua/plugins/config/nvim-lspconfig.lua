@@ -2,6 +2,7 @@ local options = {
   diagnostics = {
     update_in_insert = true,
   },
+  autoformat = true,
   format = {
     timeout_ms = 5000,
   },
