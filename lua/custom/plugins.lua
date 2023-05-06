@@ -229,6 +229,13 @@ local plugins = {
     },
   },
 
+  {
+    "simrat39/symbols-outline.nvim",
+    lazy = false,
+    config = function()
+      require("symbols-outline").setup()
+    end,
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

@@ -76,4 +76,13 @@ M.lazygit = {
     ["<leader>gg"] = { "<cmd> LazyGit<CR>", "open lazygit" },
   },
 }
+
+M.symboloutline = {
+  n = {
+    ["<leader>oo"] = { "<cmd> SymbolsOutline<CR>", "open symbol outline" },
+  },
+  i = {
+    ["<leader>oo"] = { "<cmd> SymbolsOutline<CR>", "open symbol outline" },
+  },
+}
 return M
