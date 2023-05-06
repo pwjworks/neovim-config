@@ -7,7 +7,7 @@ return {
       "MunifTanjim/nui.nvim",
     },
     opts = function()
-      vim.api.nvim_set_hl(0, "NeoTreeCursorLine", {fg = "#D8EEEB", bg = "#58B5A8" })
+      vim.api.nvim_set_hl(0, "NeoTreeCursorLine", { fg = "#D8EEEB", bg = "#58B5A8" })
       return require("plugins.config.neo-tree")
     end
   },
@@ -172,7 +172,7 @@ return {
     dependencies = { "hrsh7th/cmp-emoji",
       "onsails/lspkind.nvim",
     },
-    ---@param opts cmp.ConfigSchema
+    --@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local options = require("plugins.config.nvim-cmp")
       local cmp = require("cmp")
@@ -250,8 +250,8 @@ return {
 
       vim.keymap.set("n", ",w", function()
         local picked_window_id = picker.pick_window({
-              include_current_win = true,
-            }) or vim.api.nvim_get_current_win()
+          include_current_win = true,
+        }) or vim.api.nvim_get_current_win()
         vim.api.nvim_set_current_win(picked_window_id)
       end, { desc = "Pick a window" })
 
@@ -350,7 +350,7 @@ return {
   },
   {
     'norcalli/nvim-colorizer.lua',
-    config=function ()
+    config = function()
       require("colorizer").setup()
     end
   },
