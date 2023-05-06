@@ -1,4 +1,4 @@
-local overrides = require "custom.configs.overrides"
+local overrides = require("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -12,13 +12,13 @@ local plugins = {
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-          require "custom.configs.null-ls"
+          require("custom.configs.null-ls")
         end,
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require("plugins.configs.lspconfig")
+      require("custom.configs.lspconfig")
     end, -- Override to setup mason-lspconfig
   },
 
@@ -53,16 +53,16 @@ local plugins = {
     "karb94/neoscroll.nvim",
     lazy = false,
     config = function()
-      require("neoscroll").setup {
+      require("neoscroll").setup({
         mappings = { "<C-u>", "<C-d>" },
         --
-        hide_cursor = false,         -- Hide cursor while scrolling
-        stop_eof = true,             -- Stop at <EOF> when scrolling downwards
-        respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+        hide_cursor = false,     -- Hide cursor while scrolling
+        stop_eof = true,         -- Stop at <EOF> when scrolling downwards
+        respect_scrolloff = false, -- Stop scrolling when the cursor reaches the scrolloff margin of the file
         cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
-        easing_function = nil,       -- Default easing function
-        performance_mode = false,    -- Disable "Performance Mode" on all buffers.
-      }
+        easing_function = nil,   -- Default easing function
+        performance_mode = false, -- Disable "Performance Mode" on all buffers.
+      })
     end,
   },
   {
@@ -85,11 +85,11 @@ local plugins = {
     "petertriho/nvim-scrollbar",
     lazy = false,
     config = function()
-      require("scrollbar").setup {
+      require("scrollbar").setup({
         handle = {
           color = "#BDC0C2",
         },
-      }
+      })
     end,
   },
   {
@@ -97,16 +97,16 @@ local plugins = {
     lazy = false,
     opts = {
       highlight = {
-        multiline = true,                 -- enable multine todo comments
-        multiline_pattern = "^.",         -- lua pattern to match the next multiline from the start of the matched keyword
-        multiline_context = 10,           -- extra lines that will be re-evaluated when changing a line
-        before = "",                      -- "fg" or "bg" or empty
-        keyword = "wide",                 -- "fg", "bg", "wide", "wide_bg", "wide_fg" or empty. (wide and wide_bg is the same as bg, but will also highlight surrounding characters, wide_fg acts accordingly but with fg)
-        after = "fg",                     -- "fg" or "bg" or empty
+        multiline = true,             -- enable multine todo comments
+        multiline_pattern = "^.",     -- lua pattern to match the next multiline from the start of the matched keyword
+        multiline_context = 10,       -- extra lines that will be re-evaluated when changing a line
+        before = "",                  -- "fg" or "bg" or empty
+        keyword = "wide",             -- "fg", "bg", "wide", "wide_bg", "wide_fg" or empty. (wide and wide_bg is the same as bg, but will also highlight surrounding characters, wide_fg acts accordingly but with fg)
+        after = "fg",                 -- "fg" or "bg" or empty
         pattern = [[.*<(KEYWORDS)\s*:?]], -- pattern or table of patterns, used for highlighting (vim regex)
-        comments_only = true,             -- uses treesitter to match keywords in comments only
-        max_line_len = 400,               -- ignore lines longer than this
-        exclude = {},                     -- list of file types to exclude highlighting
+        comments_only = true,         -- uses treesitter to match keywords in comments only
+        max_line_len = 400,           -- ignore lines longer than this
+        exclude = {},                 -- list of file types to exclude highlighting
       },
       search = {
         command = "rg",
@@ -136,7 +136,7 @@ local plugins = {
       "rcarriga/nvim-notify",
     },
     config = function()
-      require("noice").setup {
+      require("noice").setup({
         lsp = {
           progress = {
             enabled = false,
@@ -154,7 +154,7 @@ local plugins = {
             opts = {},
           },
         },
-      }
+      })
     end,
   },
   {
@@ -208,7 +208,7 @@ local plugins = {
         "[q",
         function()
           if require("trouble").is_open() then
-            require("trouble").previous { skip_groups = true, jump = true }
+            require("trouble").previous({ skip_groups = true, jump = true })
           else
             vim.cmd.cprev()
           end
@@ -219,7 +219,7 @@ local plugins = {
         "]q",
         function()
           if require("trouble").is_open() then
-            require("trouble").next { skip_groups = true, jump = true }
+            require("trouble").next({ skip_groups = true, jump = true })
           else
             vim.cmd.cnext()
           end

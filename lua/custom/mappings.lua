@@ -66,9 +66,14 @@ M.persistence = {
   n = {
     ["<leader>qs"] = {
       "<cmd>lua require('persistence').load({last=true})<cr>",
-    "restore the session for the current directory"
-    }
-  }
+      "restore the session for the current directory",
+    },
+  },
 }
 
+M.lazygit = {
+  n = {
+    ["<leader>gg"] = { "<cmd> LazyGit<CR>", "open lazygit" },
+  },
+}
 return M

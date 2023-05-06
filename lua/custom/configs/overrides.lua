@@ -16,9 +16,6 @@ M.treesitter = {
   },
   indent = {
     enable = true,
-    -- disable = {
-    --   "python"
-    -- },
   },
   rainbow = {
     enable = true,
@@ -49,11 +46,6 @@ M.nvimtree = {
   renderer = {
     root_folder_label = true,
   },
-  filesystem_watchers = {
-    enable = true,
-    debounce_delay = 50,
-    ignore_dirs = {},
-  },
 }
 
 M.lspconfig = {
@@ -80,7 +72,7 @@ M.lspconfig = {
         "--header-insertion=iwyu",
         "--pch-storage=memory", -- could also be disk
         "--suggest-missing-includes",
-        "-j=4",                 -- number of workers
+        "-j=4",             -- number of workers
         -- "--resource-dir="
         "--log=error",
         --[[ "--query-driver=/usr/bin/g++", ]]
@@ -91,7 +83,7 @@ M.lspconfig = {
     },
   },
 }
-local cmp = require "cmp"
+local cmp = require("cmp")
 M.cmp = {
   mapping = {
     -- ["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -100,10 +92,10 @@ M.cmp = {
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.close(),
-    ["<Tab>"] = cmp.mapping.confirm {
+    ["<Tab>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
-    },
+    }),
     ["<C-n>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
