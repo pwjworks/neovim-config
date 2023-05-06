@@ -4,9 +4,10 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    ["<leader>qq"] = { "<cmd>qa<CR>", "enter command mode", opts = { nowait = true } },
   },
   i = {
-    ["<C-s>"] = { "<cmd> w <CR><ESC>", "save", opts = { nowait = true } },
+    ["<C-s>"] = { "<cmd>w<CR><ESC>", "save", opts = { nowait = true } },
   },
 }
 
@@ -88,4 +89,13 @@ M.telescope = {
   },
 }
 
+M.dap = {
+  n = {
+    ["<leader>do"] = { "<cmd>:lua require'dap'.toggle_breakpoint()<CR>" },
+    ["<leader>dc"] = { "<cmd>:lua require'dap'.continue()<CR>" },
+    ["<leader>ds"] = { "<cmd>:lua require'dap'.step_over()<CR>" },
+    ["<leader>di"] = { "<cmd>:lua require'dap'.step_into()<CR>" },
+    ["<leader>du"] = { "<cmd>:lua require'dapui'.toggle()<CR>" },
+  },
+}
 return M

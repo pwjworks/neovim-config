@@ -247,10 +247,6 @@ local plugins = {
       require("symbols-outline").setup()
     end,
   },
-  -- leap.nvim
-  {
-    "ggandor/leap.nvim",
-  },
   -- telescope project
   { "nvim-telescope/telescope-project.nvim" },
 
@@ -270,6 +266,25 @@ local plugins = {
       leap.add_default_mappings(true)
       vim.keymap.del({ "x", "o" }, "x")
       vim.keymap.del({ "x", "o" }, "X")
+    end,
+  },
+  -- dapui
+  {
+    "rcarriga/nvim-dap-ui",
+    opts = require("custom.configs.dapui"),
+  },
+  -- dap
+  {
+    "mfussenegger/nvim-dap",
+    event = "VeryLazy",
+    dependencies = {
+      {
+        "theHamsta/nvim-dap-virtual-text",
+        config = true,
+      },
+    },
+    config = function()
+      require("custom.configs.dap")
     end,
   },
 }
