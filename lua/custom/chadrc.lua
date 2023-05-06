@@ -2,17 +2,14 @@
 local M = {}
 
 -- Path to overriding theme and highlights files
-local highlights = require "custom.highlights"
+local highlights = require("custom.highlights")
 
 M.ui = {
   changed_themes = {
     catppuccin = {
-      -- polish_hl = {
-      --   ["@keyword"] = {
-      --     fg = "#fca7ea",
-      --     style = { "italic" },
-      --   },
-      -- }
+      base_16 = {
+        base0E = "#fca7ea",
+      },
     },
   },
   theme = "catppuccin",
@@ -29,8 +26,8 @@ M.ui = {
   cmp = {
     icons = true,
     lspkind_text = true,
-    style = "atom_colored",       -- default/flat_light/flat_dark/atom/atom_colored
-    border_color = "grey_fg",     -- only applicable for "default" style, use color names from base30 variables
+    style = "atom_colored",     -- default/flat_light/flat_dark/atom/atom_colored
+    border_color = "grey_fg",   -- only applicable for "default" style, use color names from base30 variables
     selected_item_bg = "colored", -- colored / simple
   },
   -- lazyload it when there are 1+ buffers
@@ -69,6 +66,6 @@ M.ui = {
 M.plugins = "custom.plugins"
 
 -- check core.mappings for table structure
-M.mappings = require "custom.mappings"
+M.mappings = require("custom.mappings")
 
 return M
