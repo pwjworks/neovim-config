@@ -145,5 +145,4 @@ M.cmp = {
   },
 }
 
-M.telescope = {}
 return M

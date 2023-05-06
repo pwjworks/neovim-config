@@ -27,7 +27,7 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
-
+  -- nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
@@ -37,11 +37,12 @@ local plugins = {
     },
     opts = overrides.treesitter,
   },
-
+  -- nvim-tree
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
+  -- better_escape
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -49,6 +50,7 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
+  -- neoscroll
   {
     "karb94/neoscroll.nvim",
     lazy = false,
@@ -65,14 +67,17 @@ local plugins = {
       })
     end,
   },
+  -- vim-tmux-navigator
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
+  -- lspconfig
   {
     "neovim/nvim-lspconfig",
     opts = overrides.lspconfig,
   },
+  -- surround
   {
     "kylechui/nvim-surround",
     lazy = false,
@@ -81,6 +86,7 @@ local plugins = {
       require("nvim-surround").setup()
     end,
   },
+  -- nvim scrollbar
   {
     "petertriho/nvim-scrollbar",
     lazy = false,
@@ -92,6 +98,7 @@ local plugins = {
       })
     end,
   },
+  -- todo-comments
   {
     "folke/todo-comments.nvim",
     lazy = false,
@@ -124,6 +131,7 @@ local plugins = {
       },
     },
   },
+  -- noice
   {
     "folke/noice.nvim",
     lazy = false,
@@ -157,6 +165,7 @@ local plugins = {
       })
     end,
   },
+  -- persistence
   {
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
@@ -165,10 +174,12 @@ local plugins = {
       require("persistence").setup()
     end,
   },
+  -- nvim-cmp
   {
     "hrsh7th/nvim-cmp",
     opts = overrides.cmp,
   },
+  -- indentscope
   {
     "echasnovski/mini.indentscope",
     event = { "BufReadPre", "BufNewFile" },
@@ -228,7 +239,7 @@ local plugins = {
       },
     },
   },
-
+  -- symbols outline
   {
     "simrat39/symbols-outline.nvim",
     lazy = false,
@@ -243,19 +254,6 @@ local plugins = {
   -- telescope project
   { "nvim-telescope/telescope-project.nvim" },
 
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
-
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
   -- leap
   {
     "ggandor/leap.nvim",
