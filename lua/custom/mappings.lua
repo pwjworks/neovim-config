@@ -86,6 +86,7 @@ M.telescope = {
   n = {
     ["<leader>fp"] = { ":lua require'telescope'.extensions.project.project{}<CR>", "find project" },
     ["<leader>ft"] = { "<cmd> TodoTelescope<CR>", "find todo" },
+    ["<leader>fn"] = { ":Telescope notify<CR>", "find notify" },
   },
 }
 
@@ -96,6 +97,27 @@ M.dap = {
     ["<leader>ds"] = { "<cmd>:lua require'dap'.step_over()<CR>" },
     ["<leader>di"] = { "<cmd>:lua require'dap'.step_into()<CR>" },
     ["<leader>du"] = { "<cmd>:lua require'dapui'.toggle()<CR>" },
+  },
+}
+
+M.notify = {
+  n = {
+    ["<leader>cn"] = { "<cmd>:lua require'notify'.dismiss({true,true})<CR>" },
+  },
+}
+
+M.cppassist = {
+  n = {
+    -- switch between source and header
+    ["<A-o>"] = { "<Cmd>SwitchSourceAndHeader<CR>" },
+    -- generate the function definition or static variable definition in source
+    ["<leader>cpi"] = { "<Cmd>ImplementInSource<CR>" },
+    -- generate the ation definition or static variable definition in source in visual mode
+    ["<leader>cpv"] = { "<Cmd>lua require('cppassist').ImplementInSourceInVisualMode<CR>" },
+    -- generate the function definition or static variable definition in header
+    ["<leader>cpo"] = { "<Cmd>ImplementOutOfClass<CR>" },
+    -- goto the header file
+    ["<leader>cph"] = { "<Cmd>GotoHeaderFile<CR>" },
   },
 }
 return M

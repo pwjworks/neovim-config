@@ -25,7 +25,7 @@ M.ui = {
     separator_style = "round",
   },
   -- https://github.com/NvChad/base46/tree/v2.0/lua/base46/extended_integrations
-  extended_integrations = { "alpha", "notify", "dap", "bufferline" }, -- these aren't compiled by default, ex: "alpha", "notify"
+  -- extended_integrations = { "alpha", "notify", "dap", "bufferline" }, -- these aren't compiled by default, ex: "alpha", "notify"
   cmp = {
     icons = true,
     lspkind_text = true,

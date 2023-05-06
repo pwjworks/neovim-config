@@ -287,5 +287,12 @@ local plugins = {
       require("custom.configs.dap")
     end,
   },
+  {
+    "Kohirus/cppassist.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("cppassist").setup()
+    end,
+  },
 }
 return plugins
