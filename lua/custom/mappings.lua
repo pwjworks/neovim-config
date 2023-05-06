@@ -1,14 +1,12 @@
 --@type MappingsTable
 local M = {}
 
---local cmp = require "cmp"
-
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
   },
   i = {
-    ["<C-s>"] = { "<cmd> w <CR>", "save", opts = { nowait = true } },
+    ["<C-s>"] = { "<cmd> w <CR> <ESC>", "save", opts = { nowait = true } },
   },
 }
 
@@ -81,8 +79,13 @@ M.symboloutline = {
   n = {
     ["<leader>oo"] = { "<cmd> SymbolsOutline<CR>", "open symbol outline" },
   },
-  i = {
-    ["<leader>oo"] = { "<cmd> SymbolsOutline<CR>", "open symbol outline" },
+}
+
+M.telescope = {
+  n = {
+    ["<leader>fp"] = { ":lua require'telescope'.extensions.project.project{}<CR>", "find project" },
+    ["<leader>ft"] = { "<cmd> TodoTelescope<CR>", "find todo" },
   },
 }
+
 return M
