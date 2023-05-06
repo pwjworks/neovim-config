@@ -6,7 +6,7 @@ M.general = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
   },
   i = {
-    ["<C-s>"] = { "<cmd> w <CR> <ESC>", "save", opts = { nowait = true } },
+    ["<C-s>"] = { "<cmd> w <CR><ESC>", "save", opts = { nowait = true } },
   },
 }
 

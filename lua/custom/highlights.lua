@@ -5,15 +5,25 @@
 local M = {}
 --- @type Base46HLGroupsList
 M.override = {
-  Comment = {
-    italic = true,
+  TbLineBufOff = {
+    bg = "NONE",
+  },
+  TbBufLineBufOffModified = {
+    bg = "NONE",
+  },
+  TbLineBufOffClose = {
+    bg = "NONE",
+  },
+  TblineFill = {
+    bg = "NONE",
   },
 }
 
 ---@type HLTable
 M.add = {
-  NotifyBackground={
-    fg = "#C5CDD9", bg = "#22252A"
+  NotifyBackground = {
+    fg = "#C5CDD9",
+    bg = "#22252A",
   },
 }
 

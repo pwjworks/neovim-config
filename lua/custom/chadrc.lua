@@ -10,6 +10,9 @@ M.ui = {
       base_16 = {
         base0E = "#fca7ea",
       },
+      base_30 = {
+        statusline_bg = "",
+      },
     },
   },
   theme = "catppuccin",
