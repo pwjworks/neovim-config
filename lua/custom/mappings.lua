@@ -133,9 +133,8 @@ M.cppassist = {
 
 M.split = {
   n = {
-    ["<leader>sp"] = { ":split<CR>", "Open the file in an horizontal split screen." },
-    ["<leader>sv"] = { ":vsplit<CR>", "Open the file in a vertical split screen." },
-    ["<leader>st"] = { ":tabedit<CR>", "Open the file in a new tab." },
+    ["<leader>_"] = { ":split<CR>", "Open the file in an horizontal split screen." },
+    ["<leader>|"] = { ":vsplit<CR>", "Open the file in a vertical split screen." },
   },
 }
 return M
