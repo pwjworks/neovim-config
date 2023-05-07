@@ -86,7 +86,8 @@ M.telescope = {
   n = {
     ["<leader>fp"] = { ":lua require'telescope'.extensions.project.project{}<CR>", "find project" },
     ["<leader>ft"] = { "<cmd> TodoTelescope<CR>", "find todo" },
-    ["<leader>fn"] = { ":Telescope notify<CR>", "find notify" },
+    ["<leader>fn"] = { ":Telescope noice<CR>", "find notify" },
+    ["<leader>f;"] = { ":Telescope telescope-tabs list_tabs<CR>", "find tabs" },
   },
 }
 
@@ -109,15 +110,32 @@ M.notify = {
 M.cppassist = {
   n = {
     -- switch between source and header
-    ["<A-o>"] = { "<Cmd>SwitchSourceAndHeader<CR>" },
+    ["<A-o>"] = { "<Cmd>SwitchSourceAndHeader<CR>", "switch between source and header" },
     -- generate the function definition or static variable definition in source
-    ["<leader>cpi"] = { "<Cmd>ImplementInSource<CR>" },
+    ["<leader>cpi"] = {
+      "<Cmd>ImplementInSource<CR>",
+      "generate the function definition or static variable definition in source",
+    },
     -- generate the ation definition or static variable definition in source in visual mode
-    ["<leader>cpv"] = { "<Cmd>lua require('cppassist').ImplementInSourceInVisualMode<CR>" },
+    ["<leader>cpv"] = {
+      "<Cmd>lua require('cppassist').ImplementInSourceInVisualMode<CR>",
+      "generate the ation definition or static variable definition in source in visual mode",
+    },
     -- generate the function definition or static variable definition in header
-    ["<leader>cpo"] = { "<Cmd>ImplementOutOfClass<CR>" },
+    ["<leader>cpo"] = {
+      "<Cmd>ImplementOutOfClass<CR>",
+      "generate the function definition or static variable definition in header",
+    },
     -- goto the header file
-    ["<leader>cph"] = { "<Cmd>GotoHeaderFile<CR>" },
+    ["<leader>cph"] = { "<Cmd>GotoHeaderFile<CR>", "goto the header file" },
+  },
+}
+
+M.split = {
+  n = {
+    ["<leader>sp"] = { ":split<CR>", "Open the file in an horizontal split screen." },
+    ["<leader>sv"] = { ":vsplit<CR>", "Open the file in a vertical split screen." },
+    ["<leader>st"] = { ":tabedit<CR>", "Open the file in a new tab." },
   },
 }
 return M
