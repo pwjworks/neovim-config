@@ -93,11 +93,11 @@ M.telescope = {
 
 M.dap = {
   n = {
-    ["<leader>do"] = { "<cmd>:lua require'dap'.toggle_breakpoint()<CR>" },
-    ["<leader>dc"] = { "<cmd>:lua require'dap'.continue()<CR>" },
-    ["<leader>ds"] = { "<cmd>:lua require'dap'.step_over()<CR>" },
-    ["<leader>di"] = { "<cmd>:lua require'dap'.step_into()<CR>" },
-    ["<leader>du"] = { "<cmd>:lua require'dapui'.toggle()<CR>" },
+    ["<leader>do"] = { "<cmd>:lua require'dap'.toggle_breakpoint()<CR>", "toggle breakpoint" },
+    ["<leader>dc"] = { "<cmd>:lua require'dap'.continue()<CR>", "continue" },
+    ["<leader>ds"] = { "<cmd>:lua require'dap'.step_over()<CR>", "step_over" },
+    ["<leader>di"] = { "<cmd>:lua require'dap'.step_into()<CR>", "step_into" },
+    ["<leader>du"] = { "<cmd>:lua require'dapui'.toggle()<CR>", "toggle ui" },
   },
 }
 
@@ -135,6 +135,12 @@ M.split = {
   n = {
     ["<leader>_"] = { ":split<CR>", "Open the file in an horizontal split screen." },
     ["<leader>|"] = { ":vsplit<CR>", "Open the file in a vertical split screen." },
+  },
+}
+
+M.history = {
+  n = {
+    ["<leader>oh"] = { "<Cmd>LocalHistoryToggle<CR>", "LocalHistoryToggle" },
   },
 }
 return M
