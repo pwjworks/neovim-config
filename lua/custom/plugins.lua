@@ -308,5 +308,13 @@ local plugins = {
 			vim.g.startuptime_tries = 10
 		end,
 	},
+	-- rooter
+	{
+		"notjedi/nvim-rooter.lua",
+		lazy = false,
+		config = function()
+			require("nvim-rooter").setup()
+		end,
+	},
 }
 return plugins
