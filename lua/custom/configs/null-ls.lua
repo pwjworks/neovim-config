@@ -29,7 +29,6 @@ local sources = {
 	b.formatting.clang_format,
 }
 
-local formatting_settings = require("custom.configs.format")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
 	debug = true,
@@ -41,9 +40,7 @@ null_ls.setup({
 				group = augroup,
 				buffer = bufnr,
 				callback = function()
-					if formatting_settings.autoformat then
-						lsp_formatting(bufnr)
-					end
+					lsp_formatting(bufnr)
 				end,
 			})
 		end
