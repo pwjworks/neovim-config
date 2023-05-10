@@ -5,6 +5,7 @@ M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>qq"] = { "<cmd>qa<CR>", "enter command mode", opts = { nowait = true } },
+    ["<leader>uf"] = { ":lua require('custom.configs.format').toggle()<CR>", "toggle autoformat" }
   },
   i = {
     ["<C-s>"] = { "<cmd>w<CR><ESC>", "save", opts = { nowait = true } },
@@ -143,4 +144,5 @@ M.history = {
     ["<leader>oh"] = { "<Cmd>LocalHistoryToggle<CR>", "LocalHistoryToggle" },
   },
 }
+
 return M
