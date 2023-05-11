@@ -341,6 +341,9 @@ local plugins = {
 			},
 		},
 		opts = {
+			provider_selector = function(bufnr, filetype, buftype)
+				return { "treesitter", "indent" }
+			end,
 			open_fold_hl_timeout = 400,
 			close_fold_kinds = { "imports", "comment" },
 			preview = {

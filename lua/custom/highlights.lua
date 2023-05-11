@@ -25,6 +25,9 @@ M.override = {
 
 ---@type HLTable
 M.add = {
+	UfoCursorFoldedLine = {
+		bg = "#342e4f",
+	},
 	NotifyBackground = {
 		fg = "#C5CDD9",
 		bg = "#22252A",
