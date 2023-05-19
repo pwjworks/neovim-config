@@ -96,3 +96,27 @@ vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+
+local autocmd = vim.api.nvim_create_autocmd
+
+autocmd({ "ModeChanged" }, {
+	callback = function()
+		local current_mode = vim.fn.mode()
+		if current_mode == "n" then
+			vim.api.nvim_set_hl(0, "SmoothCursor", { fg = "#FFD400" })
+			vim.fn.sign_define("smoothcursor", { text = "▷" })
+		elseif current_mode == "v" then
+			vim.api.nvim_set_hl(0, "SmoothCursor", { fg = "#bf616a" })
+			vim.fn.sign_define("smoothcursor", { text = "" })
+		elseif current_mode == "V" then
+			vim.api.nvim_set_hl(0, "SmoothCursor", { fg = "#bf616a" })
+			vim.fn.sign_define("smoothcursor", { text = "" })
+		elseif current_mode == "�" then
+			vim.api.nvim_set_hl(0, "SmoothCursor", { fg = "#bf616a" })
+			vim.fn.sign_define("smoothcursor", { text = "" })
+		elseif current_mode == "i" then
+			vim.api.nvim_set_hl(0, "SmoothCursor", { fg = "#fca7ea" })
+			vim.fn.sign_define("smoothcursor", { text = "" })
+		end
+	end,
+})

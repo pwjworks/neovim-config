@@ -396,13 +396,11 @@ local plugins = {
 		config = function()
 			require("smoothcursor").setup({
 				autostart = true,
-				cursor = "", -- cursor shape (need nerd font)
 				texthl = "SmoothCursor", -- highlight group, default is { bg = nil, fg = "#FFD400" }
 				linehl = nil, -- highlight sub-cursor line like 'cursorline', "CursorLine" recommended
 				type = "default", -- define cursor movement calculate function, "default" or "exp" (exponential).
 				fancy = {
-					enable = false, -- enable fancy mode
-					head = { cursor = "▷", texthl = "SmoothCursor", linehl = nil },
+					enable = true, -- enable fancy mode
 					body = {
 						{ cursor = "", texthl = "SmoothCursorRed" },
 						{ cursor = "", texthl = "SmoothCursorOrange" },
