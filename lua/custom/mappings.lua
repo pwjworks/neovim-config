@@ -151,4 +151,9 @@ M.history = {
 	},
 }
 
+M.neogen = {
+	n = {
+		["<leader>cpa"] = { "<Cmd>Neogen<CR>", "generate doc for cpp" },
+	},
+}
 return M
