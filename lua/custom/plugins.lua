@@ -268,6 +268,15 @@ local plugins = {
 			vim.keymap.del({ "x", "o" }, "X")
 		end,
 	},
+	-- hop
+	{
+		"phaazon/hop.nvim",
+		lazy = false,
+		branch = "v2",
+		config = function()
+			require("hop").setup({})
+		end,
+	},
 	-- dapui
 	{
 		"rcarriga/nvim-dap-ui",
@@ -432,5 +441,19 @@ local plugins = {
 		-- Uncomment next line if you want to follow only stable versions
 		-- version = "*"
 	},
+	{
+		"utilyre/barbecue.nvim",
+		lazy = false,
+		name = "barbecue",
+		version = "*",
+		dependencies = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons", -- optional dependency
+		},
+		opts = {
+			-- configurations go here
+		},
+	},
+	{ "simrat39/rust-tools.nvim" },
 }
 return plugins

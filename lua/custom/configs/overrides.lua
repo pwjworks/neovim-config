@@ -38,6 +38,8 @@ M.mason = {
 		-- c/cpp stuff
 		"clangd",
 		"clang-format",
+		"rust-analyzer",
+		"codelldb",
 	},
 }
 

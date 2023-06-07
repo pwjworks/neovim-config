@@ -156,4 +156,10 @@ M.neogen = {
 		["<leader>cpa"] = { "<Cmd>Neogen<CR>", "generate doc for cpp" },
 	},
 }
+
+M.hop = {
+	n = {
+		["W"] = { "<Cmd>HopChar1<CR>", "hopchar1", opts = { nowait = true, silent = true } },
+	},
+}
 return M

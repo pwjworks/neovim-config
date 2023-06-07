@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver" }
+local servers = { "html", "cssls", "tsserver", "rust_analyzer" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
@@ -19,5 +19,13 @@ lspconfig["clangd"].setup({
 	on_attach = on_attach,
 	capabilities = cppcapabilities,
 })
+
+lspconfig["cmake"].setup({
+	cmd = { "cmake-language-server" },
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "cmake", "CMakeLists.txt" },
+})
+
 --
 -- lspconfig.pyright.setup { blabla}
