@@ -243,9 +243,9 @@ local plugins = {
 	{
 		"simrat39/symbols-outline.nvim",
 		lazy = false,
-		config = function()
-			require("symbols-outline").setup()
-		end,
+		opts = {
+			width = 30,
+		},
 	},
 	-- telescope project
 	{ "nvim-telescope/telescope-project.nvim" },
